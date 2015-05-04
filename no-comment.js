@@ -17,24 +17,3 @@ var noComment = function (sourceFile) {
 };
 
 module.exports = noComment;
-
-// invoked from shell
-if (require.main === module) {
-    if (process.argv.length < 3) {
-        console.error('Too few arguments');
-        process.exit(1);
-    }
-
-    var sourceFile = process.argv[2];
-    var targetFile = process.argv[3];
-
-    var output = noComment(sourceFile);
-
-    if (!targetFile) {
-        return console.log(output);
-    }
-
-    fs.writeFile(targetFile, output, function (err) {
-        if (err) throw err;
-    });
-}
