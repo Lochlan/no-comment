@@ -1,0 +1,25 @@
+{
+  "name": "no-comment",
+  "version": "0.0.1",
+  "description": "Remove C and C++ style comments from a file",
+  "main": "no-comment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lochlan/no-comment.git"
+  },
+  "keywords": [
+    "comment",
+    "comments",
+    "delete",
+    "remove"
+  ],
+  "author": "Lochlan McIntosh (http://www.lochlanmcintosh.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lochlan/no-comment/issues"
+  },
+  "homepage": "https://github.com/Lochlan/no-comment"
+}
