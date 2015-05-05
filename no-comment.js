@@ -1,19 +1,14 @@
 'use strict';
 
-var fs = require('fs');
+var regexAllComments = /\/\*[\S\s]*?\*\/\s*|[^\S\n]*\/\/.*\s*/g;
+var regexBlockComments = /\/\*[\S\s]*?\*\/\s*/g;
 
-var noComment = function (sourceFile) {
-    if (!fs.existsSync(sourceFile)) {
-        console.error('File does not exist: ' + sourceFile);
-        process.exit(1);
-    }
+var noComment = function (input) {
+    return input.replace(regexAllComments, '');
+};
 
-    var filedata = fs.readFileSync(sourceFile);
-
-    var block = /\/\*(.|\n)*?\*\/\s*/g;
-    var line = /\/\/.*\s*/g;
-
-    return filedata.toString().replace(block, '').replace(line, '');
+noComment.removeBlockComments = function (input) {
+    return input.replace(regexBlockComments, '');
 };
 
 module.exports = noComment;

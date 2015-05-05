@@ -1,6 +1,6 @@
 # no-comment
 
-Remove C and C++ style comments from a file.
+Remove C and C++ style comments and any surrounding whitespace.
 
 ```JavaScript
 /*
@@ -16,7 +16,8 @@ Remove C and C++ style comments from a file.
 
 ```JavaScript
 var noComment = require('no-comment');
-var output = noComment('foo.txt');
+var fs = require('fs');
+var output = noComment(fs.readFileSync('foo.txt').toString());
 console.log(output);
 ```
 

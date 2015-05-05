@@ -13,7 +13,13 @@ if (process.argv.length < 3) {
 var sourceFile = process.argv[2];
 var targetFile = process.argv[3];
 
-var output = noComment(sourceFile);
+if (!fs.existsSync(sourceFile)) {
+    console.error('File does not exist: ' + sourceFile);
+    process.exit(1);
+}
+
+var filedata = fs.readFileSync(sourceFile);
+var output = noComment(filedata.toString());
 
 if (!targetFile) {
     return console.log(output);
