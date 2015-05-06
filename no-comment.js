@@ -1,6 +1,6 @@
 'use strict';
 
-var regexAllComments = /\/\*[\S\s]*?\*\/\s*|[^\S\n]*\/\/.*\s*/g;
+var regexAllComments = /\/\*[\S\s]*?\*\/\s*|(^|[^\S\n]+)\/\/.*\s*/gm;
 var regexBlockComments = /\/\*[\S\s]*?\*\/\s*/g;
 
 var noComment = function (input) {
