@@ -10,7 +10,7 @@ Remove C and C++ style comments and any surrounding whitespace.
 // C++ style single-line comment
 ```
 
-Note that the regular expressions used here are fairly naive and sacrifice some correctness to reduce incorrect matches.
+Note that the regular expressions used here are fairly naive.
 
 ## Usage
 
